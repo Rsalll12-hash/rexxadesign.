@@ -1,0 +1,408 @@
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  min-height: 2000px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #7e5f40;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.navbar .navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-menu a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 1rem 1rem;
+}
+
+/* ini caranya supaya tulisan menjadi coklat */
+.navbar .navbar-menu a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-menu a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scalex(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-menu a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .feathericons a {
+  color: #fff;
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.navbar .feathericons a:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/background.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 5%,
+    rgba(255, 255, 255, 0) 55%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .start {
+  margin-top: 1rem;
+  color: #fff;
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .start:hover {
+  color: var(--bg);
+}
+
+/* About Section */
+.about,
+.produk {
+  padding: 7rem 7% 1.4rem;
+}
+
+.about h2,
+.produk h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.produk h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1.5rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+}
+
+.about .row .content h3 span {
+  font-style: italic;
+}
+
+.about .row .content h3 span span {
+  color: var(--primary);
+}
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Produk Section */
+.produk {
+  padding: 7rem 7% 1.4rem;
+}
+
+.produk h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.produk h2 span {
+  color: var(--primary);
+}
+
+.produk p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  padding-bottom: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Judul kategori */
+.produk .fnd {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.produk .fnd::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  margin: 4px auto 0;
+  border-radius: 3px;
+}
+
+/* Container grid */
+.produk .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1.2rem;
+}
+
+/* Card mengikuti tampilan foto */
+.produk .produk-card {
+  background: #b6895b;
+  width: 180px;
+  border-radius: 12px;
+  text-align: center;
+  padding: 1.3rem 1rem;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.68);
+  transition: 0.3s;
+}
+
+/* Hover efek seperti card di foto */
+.produk .produk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgb(255, 255, 255);
+}
+
+/* Gambar bulat dan agak besar */
+.produk .produk-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+  border: 3px solid var(--bg);
+}
+
+/* Nama menu */
+.produk .produk-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+/* harga */
+.produk .produk-card p {
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: 500;
+}
+/* kontak section */
+.kontak .row {
+  display: flex;
+  margin-top: 2rem;
+  padding: 3rem 2rem;
+  background-color: #222;
+  border-radius: 15px;
+  gap: 2rem;
+}
+
+/* maps */
+.kontak .row iframe {
+  flex: 1 1 45rem;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* wrapper input + icon */
+.kontak .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  background-color: var(--bg);
+  border: 1px solid #6a6a6a;
+  padding: 1rem 1.2rem;
+  border-radius: 7px;
+}
+
+/* icon feather */
+.kontak .row form .input-group i {
+  margin-right: 1rem;
+}
+
+/* textbox input */
+.kontak .row form .input-group input {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  outline: none;
+}
+
+/* tombol kirim */
+.kontak .row form .btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 10px;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+.kontak .row form .btn:hover {
+  background-color: #8d6a46; /* warna lebih gelap */
+  transition: 0.2s;
+}
+.kontak h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.kontak h2 span {
+  color: var(--primary); /* warna coffee */
+}
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1.5rem 0 2.5rem;
+  margin-top: 3rem;
+  color: #fff;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+
+footer .social a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+footer .social a:hover {
+  color: #2f1d14;
+}
+
+footer .link a {
+  color: #fff;
+  margin: 0 1rem;
+}
+
+footer .link a:hover {
+  color: #2f1d14;
+}
+
+/* khusus link kontak */
+footer .link .kontak-coffee {
+  color: #3b2818 !important;
+  font-weight: 600;
+}
+
+footer .link .kontak-coffee:hover {
+  color: #2a1b12 !important;
+}
+
+footer .credit p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+footer .credit a {
+  color: #2f3a56;
+  font-weight: 700;
+}
